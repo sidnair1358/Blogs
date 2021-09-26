@@ -8,7 +8,17 @@ const Create = () => {
   function handleSubmit(e) {
     e.preventDefault();
     const blog = { title, body, author };
-    console.log(blog);
+
+    fetch("http://localhost:8000/blogs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      setTitle("");
+      setBody("");
+      setAuthor("");
+      console.log("new blog added");
+    });
   }
 
   return (
