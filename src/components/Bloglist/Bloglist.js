@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Bloglist = ({ blogs, title }) => {
+  console.log(blogs);
   return (
     <div className="blog-list">
       <h1>{title}</h1>
